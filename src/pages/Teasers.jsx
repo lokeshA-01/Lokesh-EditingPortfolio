@@ -151,6 +151,7 @@ function Teasers() {
 
         {/* =========================================
             PROJECT 01 — MARRIAGE
+            LOCAL — UNCHANGED
         ========================================= */}
 
         <TeaserProject
@@ -168,11 +169,13 @@ function Teasers() {
           tags={["EDITING", "COLOR", "SFX"]}
           video="/videos/MarriageTeaser1-web.mp4"
           poster="/images/MarriageTeaserThumb.jpg"
+          type="local"
         />
 
 
         {/* =========================================
             PROJECT 02 — KOVIL
+            YOUTUBE
         ========================================= */}
 
         <TeaserProject
@@ -188,13 +191,15 @@ function Teasers() {
           year="2026"
           description="A vibrant event teaser shaped through rhythm, atmosphere and cinematic pacing."
           tags={["EDITING", "SFX", "COLOR"]}
-          video="/videos/KovilFunctionTeaser.mp4"
+          video="https://www.youtube.com/embed/ResqNlVlHW8"
           poster="/images/KovilfnThumb.jpg"
+          type="youtube"
         />
 
 
         {/* =========================================
             PROJECT 03 — THEATRE
+            YOUTUBE
         ========================================= */}
 
         <TeaserProject
@@ -210,13 +215,15 @@ function Teasers() {
           year="2026"
           description="A promotional teaser designed to create impact and anticipation before the show."
           tags={["EDITING", "MOTION", "SFX"]}
-          video="/videos/TheatreTeaser.mp4"
+          video="https://www.youtube.com/embed/zDszUl77mWw"
           poster="/images/TheatreThumb.jpg"
+          type="youtube"
         />
 
 
         {/* =========================================
             PROJECT 04 — WONE8
+            LOCAL
         ========================================= */}
 
         <TeaserProject
@@ -232,8 +239,9 @@ function Teasers() {
           year="2026"
           description="A commercial opening teaser focused on energy, presentation and visual impact."
           tags={["EDITING", "COLOR", "MOTION"]}
-          video="/videos/Wone8realestateTeaser.mp4"
+          video="/videos/Wone8realestateTeaser-web.mp4"
           poster="/images/wone8Thumb.jpg"
+          type="local"
         />
 
       </section>
@@ -354,6 +362,7 @@ function TeaserProject({
   tags,
   video,
   poster,
+  type = "local",
 }) {
   const videoRef = useRef(null);
 
@@ -383,20 +392,35 @@ function TeaserProject({
 
       <div className="teaser-project-visual">
 
-        <video
-          ref={videoRef}
-          className="teaser-project-video"
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={poster}
-        >
-          <source
+        {type === "youtube" ? (
+
+          <iframe
+            className="teaser-project-video"
             src={video}
-            type="video/mp4"
-          />
-        </video>
+            title={`${category} teaser`}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+
+        ) : (
+
+          <video
+            ref={videoRef}
+            className="teaser-project-video"
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={poster}
+          >
+            <source
+              src={video}
+              type="video/mp4"
+            />
+          </video>
+
+        )}
 
         <div className="teaser-project-shade"></div>
 
@@ -418,18 +442,22 @@ function TeaserProject({
 
         {/* VIEW BUTTON */}
 
-        <div className="teaser-project-center">
+        {type === "local" && (
 
-          <button
-            type="button"
-            className="teaser-view-circle"
-            onClick={openVideo}
-            aria-label={`Play ${category} teaser fullscreen`}
-          >
-            VIEW
-          </button>
+          <div className="teaser-project-center">
 
-        </div>
+            <button
+              type="button"
+              className="teaser-view-circle"
+              onClick={openVideo}
+              aria-label={`Play ${category} teaser fullscreen`}
+            >
+              VIEW
+            </button>
+
+          </div>
+
+        )}
 
 
         {/* BOTTOM INFO */}
