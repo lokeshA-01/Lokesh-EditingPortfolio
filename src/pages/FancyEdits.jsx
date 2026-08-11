@@ -5,22 +5,57 @@ function FancyEdits() {
 
   const videoRefs = useRef([]);
 
-  const openFullscreen = async (index) => {
+
+  /* =========================================
+     LOCAL VIDEO FULLSCREEN
+     Used only for Project 01
+  ========================================= */
+
+  const openLocalFullscreen = async (index) => {
+
     const video = videoRefs.current[index];
 
     if (!video) return;
 
     try {
+
       await video.play();
 
       if (video.requestFullscreen) {
+
         await video.requestFullscreen();
+
       } else if (video.webkitRequestFullscreen) {
+
         await video.webkitRequestFullscreen();
+
       }
+
     } catch (error) {
-      console.log("Fullscreen video could not be opened:", error);
+
+      console.log(
+        "Fullscreen video could not be opened:",
+        error
+      );
+
     }
+
+  };
+
+
+  /* =========================================
+     YOUTUBE VIDEO
+     Used for Projects 02, 03 and 04
+  ========================================= */
+
+  const openYouTube = (videoId) => {
+
+    window.open(
+      `https://www.youtube.com/watch?v=${videoId}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
   };
 
 
@@ -165,6 +200,7 @@ function FancyEdits() {
 
         {/* =========================================
             PROJECT 01
+            LOCAL VIDEO
         ========================================= */}
 
         <article className="fancy-project fancy-project-main">
@@ -207,7 +243,7 @@ function FancyEdits() {
             <button
               type="button"
               className="fancy-project-view"
-              onClick={() => openFullscreen(0)}
+              onClick={() => openLocalFullscreen(0)}
             >
               VIEW
             </button>
@@ -273,6 +309,7 @@ function FancyEdits() {
 
         {/* =========================================
             PROJECT 02 — GHOSTED
+            YOUTUBE
         ========================================= */}
 
         <article className="fancy-project fancy-project-ghosted">
@@ -303,21 +340,13 @@ function FancyEdits() {
 
             <div className="fancy-project-media">
 
-              <video
-                ref={(el) => {
-                  videoRefs.current[1] = el;
-                }}
+              <iframe
                 className="fancy-project-video"
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              >
-                <source
-                  src="/videos/Ghosted Edit.mp4"
-                  type="video/mp4"
-                />
-              </video>
+                src="https://www.youtube.com/embed/J_iYZFkO4Ts?rel=0&modestbranding=1"
+                title="Ghosted Movie Edit"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
 
 
               <div className="fancy-project-shade"></div>
@@ -326,7 +355,9 @@ function FancyEdits() {
               <button
                 type="button"
                 className="fancy-project-view"
-                onClick={() => openFullscreen(1)}
+                onClick={() =>
+                  openYouTube("J_iYZFkO4Ts")
+                }
               >
                 VIEW
               </button>
@@ -360,6 +391,7 @@ function FancyEdits() {
 
         {/* =========================================
             PROJECT 03 — DC
+            YOUTUBE
         ========================================= */}
 
         <article className="fancy-project fancy-project-wide">
@@ -388,21 +420,13 @@ function FancyEdits() {
 
           <div className="fancy-project-media">
 
-            <video
-              ref={(el) => {
-                videoRefs.current[2] = el;
-              }}
+            <iframe
               className="fancy-project-video"
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source
-                src="/videos/DC movie Edit.mp4"
-                type="video/mp4"
-              />
-            </video>
+              src="https://www.youtube.com/embed/DDUC-FNYNYM?rel=0&modestbranding=1"
+              title="DC Movie Edit"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
 
 
             <div className="fancy-project-shade"></div>
@@ -424,7 +448,9 @@ function FancyEdits() {
             <button
               type="button"
               className="fancy-project-view"
-              onClick={() => openFullscreen(2)}
+              onClick={() =>
+                openYouTube("DDUC-FNYNYM")
+              }
             >
               VIEW
             </button>
@@ -458,6 +484,7 @@ function FancyEdits() {
 
         {/* =========================================
             PROJECT 04 — THALAPATHY
+            YOUTUBE
         ========================================= */}
 
         <article className="fancy-project fancy-project-thalapathy">
@@ -488,21 +515,13 @@ function FancyEdits() {
 
           <div className="fancy-project-media">
 
-            <video
-              ref={(el) => {
-                videoRefs.current[3] = el;
-              }}
+            <iframe
               className="fancy-project-video"
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source
-                src="/videos/Thalapathy vijay Edit.mp4"
-                type="video/mp4"
-              />
-            </video>
+              src="https://www.youtube.com/embed/dMRm13YXAEg?rel=0&modestbranding=1"
+              title="Thalapathy Vijay Edit"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
 
 
             <div className="fancy-project-shade"></div>
@@ -524,7 +543,9 @@ function FancyEdits() {
             <button
               type="button"
               className="fancy-project-view"
-              onClick={() => openFullscreen(3)}
+              onClick={() =>
+                openYouTube("dMRm13YXAEg")
+              }
             >
               VIEW
             </button>
