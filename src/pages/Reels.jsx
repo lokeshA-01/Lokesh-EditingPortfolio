@@ -15,7 +15,7 @@ function Reels() {
       if (video.requestFullscreen) {
         await video.requestFullscreen();
       } else if (video.webkitRequestFullscreen) {
-        await video.webkitRequestFullscreen();
+        video.webkitRequestFullscreen();
       }
     } catch (error) {
       console.log("Fullscreen error:", error);
@@ -140,7 +140,10 @@ function Reels() {
         </div>
 
 
-        {/* PROJECT 01 */}
+        {/* ========================================
+            PROJECT 01 — LOCAL
+            HERO — DO NOT CHANGE
+        ======================================== */}
 
         <ReelProject
           index="01"
@@ -149,42 +152,55 @@ function Reels() {
           src="/videos/My cinematic edit-web.mp4"
           description="A cinematic visual piece built around atmosphere, rhythm, emotion, and carefully crafted visual moments."
           tags={["CINEMATIC", "STORY", "MOTION"]}
+          videoType="local"
         />
 
 
-        {/* PROJECT 02 */}
+        {/* ========================================
+            PROJECT 02 — YOUTUBE
+            ACHILLES
+        ======================================== */}
 
         <ReelProject
           index="02"
           title="Achilles Edit"
           type="Cinematic Edit"
-          src="/videos/Achilles Edit.mp4"
+          src="https://www.youtube.com/embed/-CHGkx82pPI"
           description="A dramatic character edit built around intensity, rhythm, and cinematic atmosphere."
           tags={["CINEMATIC", "CHARACTER", "EDIT"]}
+          videoType="youtube"
         />
 
 
-        {/* PROJECT 03 */}
+        {/* ========================================
+            PROJECT 03 — YOUTUBE
+            CAPTAIN AMERICA
+        ======================================== */}
 
         <ReelProject
           index="03"
           title="Captain America Edit"
           type="Character Edit"
-          src="/videos/Captain America Edit.mp4"
+          src="https://www.youtube.com/embed/4RLJuE0GJwE"
           description="A heroic edit shaped through powerful moments, pacing, and cinematic impact."
           tags={["MARVEL", "CINEMATIC", "CHARACTER"]}
+          videoType="youtube"
         />
 
 
-        {/* PROJECT 04 */}
+        {/* ========================================
+            PROJECT 04 — YOUTUBE
+            COLLEGE PROTEST
+        ======================================== */}
 
         <ReelProject
           index="04"
           title="Clg Protest Edit"
           type="Event Edit"
-          src="/videos/Clg Protest Edit.mp4"
+          src="https://www.youtube.com/embed/nePKKuccyhw"
           description="A raw visual piece capturing energy, movement, and the atmosphere of a real moment."
           tags={["EVENT", "STORY", "MOTION"]}
+          videoType="youtube"
         />
 
       </section>
@@ -227,7 +243,8 @@ function ReelProject({
   type,
   src,
   description,
-  tags
+  tags,
+  videoType = "local"
 }) {
 
   const videoRef = useRef(null);
@@ -243,7 +260,7 @@ function ReelProject({
       if (video.requestFullscreen) {
         await video.requestFullscreen();
       } else if (video.webkitRequestFullscreen) {
-        await video.webkitRequestFullscreen();
+        video.webkitRequestFullscreen();
       }
     } catch (error) {
       console.log("Fullscreen error:", error);
@@ -255,15 +272,30 @@ function ReelProject({
 
       <div className="reel-project-media">
 
-        <video
-          ref={videoRef}
-          className="reel-project-video"
-          src={src}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        />
+        {videoType === "youtube" ? (
+
+          <iframe
+            className="reel-project-video"
+            src={src}
+            title={title}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+
+        ) : (
+
+          <video
+            ref={videoRef}
+            className="reel-project-video"
+            src={src}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+
+        )}
 
         <div className="reel-project-shade"></div>
 
@@ -283,15 +315,19 @@ function ReelProject({
         </div>
 
 
-        {/* VIEW BUTTON */}
+        {/* VIEW BUTTON — LOCAL ONLY */}
 
-        <button
-          className="reel-project-view"
-          onClick={openFullscreen}
-          aria-label={`View ${title} fullscreen`}
-        >
-          VIEW
-        </button>
+        {videoType === "local" && (
+
+          <button
+            className="reel-project-view"
+            onClick={openFullscreen}
+            aria-label={`View ${title} fullscreen`}
+          >
+            VIEW
+          </button>
+
+        )}
 
 
         {/* BOTTOM INFO */}
@@ -303,7 +339,9 @@ function ReelProject({
           </span>
 
           <span>
-            FULLSCREEN ↗
+            {videoType === "youtube"
+              ? "YOUTUBE ↗"
+              : "FULLSCREEN ↗"}
           </span>
 
         </div>
