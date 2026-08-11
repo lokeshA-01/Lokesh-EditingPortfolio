@@ -42,7 +42,7 @@ function Teasers() {
           poster="/images/MarriageTeaserThumb.jpg"
         >
           <source
-            src="/videos/MarriageTeaser1.mp4"
+            src="/videos/MarriageTeaser1-web.mp4"
             type="video/mp4"
           />
         </video>
@@ -166,7 +166,7 @@ function Teasers() {
           year="2026"
           description="A cinematic marriage teaser built around emotion, movement and intimate moments."
           tags={["EDITING", "COLOR", "SFX"]}
-          video="/videos/MarriageTeaser1.mp4"
+          video="/videos/MarriageTeaser1-web.mp4"
           poster="/images/MarriageTeaserThumb.jpg"
         />
 

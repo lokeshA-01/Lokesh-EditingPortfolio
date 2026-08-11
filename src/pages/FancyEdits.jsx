@@ -43,7 +43,7 @@ function FancyEdits() {
           preload="auto"
         >
           <source
-            src="/videos/fancy-hero.mp4"
+            src="/videos/fancy-hero-web.mp4"
             type="video/mp4"
           />
         </video>
@@ -182,7 +182,7 @@ function FancyEdits() {
               preload="metadata"
             >
               <source
-                src="/videos/fancy-hero.mp4"
+                src="/videos/fancy-hero-web.mp4"
                 type="video/mp4"
               />
             </video>

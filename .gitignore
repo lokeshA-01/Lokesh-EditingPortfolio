@@ -25,4 +25,9 @@ dist-ssr
 
 
 # Portfolio videos
-public/videos/
+public/videos/*
+
+# Allow compressed hero videos
+!public/videos/fancy-hero-web.mp4
+!public/videos/MarriageTeaser1-web.mp4
+!public/videos/My cinematic edit-web.mp4

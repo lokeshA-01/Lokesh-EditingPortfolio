@@ -34,7 +34,7 @@ function Reels() {
         <video
           ref={heroVideoRef}
           className="reels-hero-video"
-          src="/videos/My cinematic edit.mp4"
+          src="/videos/My cinematic edit-web.mp4"
           muted
           loop
           playsInline
@@ -145,7 +145,7 @@ function Reels() {
           index="01"
           title="My Cinematic Edit"
           type="Cinematic Edit"
-          src="/videos/My cinematic edit.mp4"
+          src="/videos/My cinematic edit-web.mp4"
           description="A cinematic visual piece built around atmosphere, rhythm, emotion, and carefully crafted visual moments."
           tags={["CINEMATIC", "STORY", "MOTION"]}
         />
