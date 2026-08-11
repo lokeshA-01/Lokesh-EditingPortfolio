@@ -117,6 +117,9 @@ function Landing() {
           <button
             className="category-card reels-card"
             type="button"
+            onClick={() => {
+              window.location.href = "/reels";
+            }}
           >
 
             <img

@@ -11,9 +11,18 @@ function Header() {
             LOGO
         ======================================== */}
 
-        <a href="/" className="site-logo">
-          Loki
-        </a>
+        <div className="site-logo">
+
+          <img
+            src="/images/Logo.jpg"
+            alt="Lokesh"
+          />
+
+          <span>
+            LOKESH
+          </span>
+
+        </div>
 
 
         {/* ========================================

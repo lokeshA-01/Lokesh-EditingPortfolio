@@ -39,6 +39,7 @@ function Reels() {
           loop
           playsInline
           autoPlay
+          preload="metadata"
           onClick={() => openFullscreen(heroVideoRef)}
         />
 

@@ -45,26 +45,24 @@
 ======================================== */
 
 .site-logo {
-  justify-self: start;
-
-  color: var(--text);
-
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-
-  font-size: 19px;
-
-  font-weight: 500;
-
-  letter-spacing: -0.04em;
-
-  transition:
-    color 0.5s ease,
-    opacity 0.3s ease;
+  color: #ffffff;
+  font-family: inter;
 }
 
+.site-logo img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 
-.site-logo:hover {
-  opacity: 0.65;
+.site-logo span {
+  color: inherit;
 }
 
 
@@ -407,40 +405,200 @@
 @media (max-width: 900px) {
 
   .site-header {
-    padding: 18px 22px;
+    padding: 14px 18px;
   }
 
 
   .header-inner {
-    grid-template-columns:
-      auto 1fr auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
   }
 
 
-  .main-nav {
-    justify-content: center;
+  /* ========================================
+     LOGO
+  ======================================== */
 
-    gap: 18px;
+  .site-logo {
+    flex-shrink: 0;
+
+    gap: 8px;
+
+    font-size: 15px;
+  }
+
+
+  .site-logo img {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* ========================================
+     NAVIGATION
+  ======================================== */
+
+  .main-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex: 1;
+
+    justify-content: center;
   }
 
 
   .main-nav a {
-    font-size: 12px;
+    font-size: 11px;
+
+    white-space: nowrap;
   }
 
 
-  .main-nav a:nth-child(n + 4) {
+  /* Hide only the less important links
+     when the screen becomes tight */
+
+  .main-nav a:nth-child(1),
+  .main-nav a:nth-child(5) {
     display: none;
   }
 
 
+  /* ========================================
+     HEADER ACTIONS
+  ======================================== */
+
   .header-actions {
-    gap: 14px;
+    flex-shrink: 0;
+
+    gap: 0;
   }
 
 
   .contact-link {
     display: none;
+  }
+
+
+  .theme-toggle {
+    width: 62px;
+    height: 30px;
+
+    padding: 0 6px;
+  }
+
+
+  .toggle-track {
+    width: 22px;
+    height: 22px;
+
+    top: 3px;
+    left: 3px;
+  }
+
+
+  .theme-toggle.light .toggle-track {
+    transform: translateX(32px);
+  }
+
+
+  .toggle-icon {
+    width: 16px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 600px) {
+
+  .site-header {
+    padding: 12px 14px;
+  }
+
+
+  .site-logo {
+    font-size: 14px;
+  }
+
+
+  .site-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .main-nav {
+    gap: 10px;
+  }
+
+
+  .main-nav a {
+    font-size: 10px;
+  }
+
+
+  .theme-toggle {
+    width: 58px;
+    height: 29px;
+  }
+
+
+  .theme-toggle.light .toggle-track {
+    transform: translateX(29px);
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 420px) {
+
+  .main-nav {
+    gap: 8px;
+  }
+
+
+  .main-nav a {
+    font-size: 9px;
+  }
+
+
+  .site-logo {
+    gap: 6px;
+
+    font-size: 13px;
+  }
+
+
+  .site-logo img {
+    width: 29px;
+    height: 29px;
+  }
+
+
+  .theme-toggle {
+    width: 54px;
+    height: 28px;
+  }
+
+
+  .theme-toggle.light .toggle-track {
+    transform: translateX(25px);
   }
 
 }
