@@ -40,7 +40,7 @@ function FancyEdits() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source
             src="/videos/fancy-hero-web.mp4"

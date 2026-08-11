@@ -38,7 +38,7 @@ function Teasers() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/images/MarriageTeaserThumb.jpg"
         >
           <source
