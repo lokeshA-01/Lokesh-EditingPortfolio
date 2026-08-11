@@ -3,20 +3,16 @@ import ThemeToggle from "./ThemeToggle";
 import "../styles/header.css";
 
 function Header() {
-
   const [menuOpen, setMenuOpen] = useState(false);
-
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-
   return (
     <header className="site-header">
 
       <div className="header-inner">
-
 
         {/* ========================================
             LOGO
@@ -27,7 +23,6 @@ function Header() {
           className="site-logo"
           onClick={closeMenu}
         >
-
           <img
             src="/images/Logo.jpg"
             alt="Lokesh"
@@ -36,9 +31,7 @@ function Header() {
           <span>
             LOKESH
           </span>
-
         </a>
-
 
 
         {/* ========================================
@@ -70,7 +63,6 @@ function Header() {
         </nav>
 
 
-
         {/* ========================================
             DESKTOP RIGHT SIDE
         ======================================== */}
@@ -89,7 +81,6 @@ function Header() {
         </div>
 
 
-
         {/* ========================================
             MOBILE MENU BUTTON
         ======================================== */}
@@ -103,14 +94,24 @@ function Header() {
           aria-label="Toggle navigation"
           aria-expanded={menuOpen}
         >
-
           <span></span>
           <span></span>
-
         </button>
 
       </div>
 
+
+      {/* ========================================
+          MOBILE MENU OVERLAY
+      ======================================== */}
+
+      <div
+        className={`mobile-menu-overlay ${
+          menuOpen ? "open" : ""
+        }`}
+        onClick={closeMenu}
+        aria-hidden={!menuOpen}
+      />
 
 
       {/* ========================================
@@ -175,6 +176,10 @@ function Header() {
 
         </nav>
 
+
+        {/* ========================================
+            MOBILE MENU FOOTER
+        ======================================== */}
 
         <div className="mobile-menu-footer">
 
