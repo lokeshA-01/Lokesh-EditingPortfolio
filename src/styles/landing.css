@@ -1,0 +1,811 @@
+/* ========================================
+   LANDING PAGE
+======================================== */
+
+.landing {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--background);
+  color: var(--text);
+
+  overflow: hidden;
+  isolation: isolate;
+
+  transition:
+    background 0.8s ease;
+}
+
+
+/* ========================================
+   CINEMATIC LIGHT FIELD
+======================================== */
+
+.light-field {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  background: transparent;
+
+  transition:
+    opacity 0.8s ease;
+}
+
+
+/* ========================================
+   MAIN LIGHT RIBBON
+======================================== */
+
+.light-ribbon {
+  position: absolute;
+
+  width: 150%;
+  height: 70%;
+
+  left: -30%;
+  top: -5%;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(70, 40, 20, 0.15) 15%,
+      rgba(255, 180, 100, 0.65) 28%,
+      rgba(245, 240, 220, 0.95) 39%,
+      rgba(80, 220, 220, 0.9) 48%,
+      rgba(20, 60, 255, 0.9) 58%,
+      rgba(20, 20, 100, 0.25) 70%,
+      transparent 82%
+    );
+
+  transform: rotate(23deg);
+
+  filter: blur(38px);
+
+  opacity: 0.9;
+
+  animation:
+    ribbonMove 18s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   SOFT OUTER GLOW
+======================================== */
+
+.light-glow {
+  position: absolute;
+
+  width: 160%;
+  height: 65%;
+
+  left: -35%;
+  top: 5%;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 10%,
+      rgba(255, 130, 60, 0.25) 30%,
+      rgba(255, 255, 255, 0.25) 43%,
+      rgba(30, 160, 255, 0.35) 58%,
+      transparent 78%
+    );
+
+  transform: rotate(23deg);
+
+  filter: blur(90px);
+
+  opacity: 0.7;
+
+  animation:
+    glowMove 25s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   DARK MODE LIGHT
+======================================== */
+
+[data-theme="dark"] .light-ribbon {
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .light-glow {
+  opacity: 0.7;
+}
+
+
+/* ========================================
+   LIGHT MODE LIGHT
+   Keep the ribbon visible but slightly
+   softer against the brighter background.
+======================================== */
+
+[data-theme="light"] .light-ribbon {
+  opacity: 0.72;
+}
+
+[data-theme="light"] .light-glow {
+  opacity: 0.48;
+}
+
+
+/* ========================================
+   LIGHT MOVEMENT
+======================================== */
+
+@keyframes ribbonMove {
+
+  0% {
+    transform:
+      translate(-3%, -2%)
+      rotate(23deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(3%, 2%)
+      rotate(21deg)
+      scale(1.04);
+  }
+
+  100% {
+    transform:
+      translate(-1%, 4%)
+      rotate(25deg)
+      scale(1.02);
+  }
+}
+
+
+@keyframes glowMove {
+
+  0% {
+    transform:
+      translate(-2%, 0%)
+      rotate(23deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(4%, 3%)
+      rotate(20deg)
+      scale(1.08);
+  }
+
+  100% {
+    transform:
+      translate(-2%, 5%)
+      rotate(26deg)
+      scale(1.04);
+  }
+}
+
+
+/* ========================================
+   LANDING CONTENT
+======================================== */
+
+.landing-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 90%);
+
+  text-align: center;
+}
+
+
+/* ========================================
+   WELCOME
+======================================== */
+
+.landing-welcome {
+  margin-bottom: 18px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+
+  transition:
+    color 0.7s ease;
+}
+
+
+/* ========================================
+   MAIN HEADING
+======================================== */
+
+.landing h1 {
+  margin: 0 0 70px;
+
+  font-size: clamp(40px, 6vw, 88px);
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+
+  color: var(--text);
+
+  transition:
+    color 0.7s ease;
+}
+
+
+/* ========================================
+   CATEGORY LIST
+======================================== */
+
+.category-list {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 45px;
+}
+
+
+/* ========================================
+   PORTFOLIO CARD
+======================================== */
+
+.category-card {
+  position: relative;
+
+  width: 220px;
+  height: 280px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+
+  background: var(--card-background);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  text-align: left;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.7s ease,
+    box-shadow 0.7s ease,
+    background 0.7s ease,
+    color 0.7s ease;
+}
+
+
+/* ========================================
+   CARD IMAGE
+======================================== */
+
+.card-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  z-index: 0;
+
+  opacity: 1;
+  visibility: visible;
+
+  transform: scale(1.03);
+
+  transition:
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1s ease;
+}
+
+
+/* ========================================
+   CARD ATMOSPHERE
+======================================== */
+
+.category-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.12),
+      transparent 35%
+    );
+
+  opacity: 0.4;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+
+/* ========================================
+   CARD CINEMATIC VIGNETTE
+======================================== */
+
+.category-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 20%,
+      rgba(0, 0, 0, 0.15) 45%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   CARD ATMOSPHERE VARIATIONS
+======================================== */
+
+.fancy-card {
+  background:
+    radial-gradient(
+      circle at 70% 25%,
+      rgba(80, 120, 255, 0.35),
+      transparent 40%
+    ),
+    var(--card-background);
+}
+
+
+.wedding-card {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 160, 130, 0.3),
+      transparent 40%
+    ),
+    var(--card-background);
+}
+
+
+.reels-card {
+  background:
+    radial-gradient(
+      circle at 65% 30%,
+      rgba(80, 220, 200, 0.3),
+      transparent 40%
+    ),
+    var(--card-background);
+}
+
+
+/* ========================================
+   CARD NUMBER
+======================================== */
+
+.card-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 4;
+
+  font-size: 11px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+
+  transition:
+    color 0.7s ease;
+}
+
+
+/* ========================================
+   CARD INFORMATION
+======================================== */
+
+.card-info {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ========================================
+   CARD TITLE
+======================================== */
+
+.card-title {
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--text);
+
+  transform: translateY(4px);
+
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.7s ease;
+}
+
+
+/* ========================================
+   CARD ARROW
+======================================== */
+
+.card-arrow {
+  font-size: 20px;
+
+  color: var(--text);
+
+  opacity: 0.5;
+
+  transform:
+    translate(-5px, 5px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.7s ease;
+}
+
+
+/* ========================================
+   CARD HOVER
+======================================== */
+
+.category-card:hover {
+  transform:
+    translateY(-14px)
+    scale(1.025);
+
+  border-color: var(--text-muted);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+
+.category-card:hover::before {
+  opacity: 0.9;
+
+  transform: scale(1.25);
+}
+
+
+.category-card:hover .card-image {
+  transform: scale(1.12);
+
+  filter:
+    brightness(0.9)
+    contrast(1.05)
+    saturate(1.05);
+}
+
+
+.category-card:hover .card-title {
+  transform: translateY(0);
+}
+
+
+.category-card:hover .card-arrow {
+  opacity: 1;
+
+  transform:
+    translate(0, 0);
+}
+
+
+/* ========================================
+   IMAGE PLACEHOLDER
+======================================== */
+
+.card-placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255, 255, 255, 0.08),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(30, 30, 35, 0.95),
+      rgba(8, 8, 10, 1)
+    );
+}
+
+
+.card-placeholder span {
+  font-size: 9px;
+
+  letter-spacing: 0.28em;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* ========================================
+   LIGHT MODE
+   Premium card treatment
+======================================== */
+
+[data-theme="light"] .category-card {
+  border-color:
+    rgba(20, 20, 30, 0.10);
+
+  box-shadow:
+    0 18px 45px rgba(30, 35, 50, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* ========================================
+   LIGHT MODE ATMOSPHERE
+======================================== */
+
+[data-theme="light"] .category-card::before {
+  opacity: 0.58;
+
+  background:
+    radial-gradient(
+      circle at 30% 18%,
+      rgba(255, 255, 255, 0.70),
+      transparent 38%
+    );
+}
+
+
+/* ========================================
+   LIGHT MODE VIGNETTE
+======================================== */
+
+[data-theme="light"] .category-card::after {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 30%,
+      rgba(255, 255, 255, 0.02) 62%,
+      rgba(220, 222, 228, 0.22) 100%
+    );
+}
+
+
+/* ========================================
+   LIGHT MODE CARD COLOURS
+======================================== */
+
+[data-theme="light"] .fancy-card {
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(100, 135, 255, 0.20),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(245, 246, 250, 0.42)
+    );
+}
+
+
+[data-theme="light"] .wedding-card {
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 175, 150, 0.20),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(247, 245, 246, 0.42)
+    );
+}
+
+
+[data-theme="light"] .reels-card {
+  background:
+    radial-gradient(
+      circle at 65% 20%,
+      rgba(90, 215, 200, 0.20),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(244, 248, 248, 0.42)
+    );
+}
+
+
+/* ========================================
+   LIGHT MODE IMAGE
+   Keep photos crisp and premium
+======================================== */
+
+[data-theme="light"] .card-image {
+  filter:
+    saturate(0.98)
+    contrast(1.02);
+}
+
+
+/* ========================================
+   LIGHT MODE TEXT
+======================================== */
+
+[data-theme="light"] .card-title {
+  color: #111216;
+}
+
+
+[data-theme="light"] .card-arrow {
+  color: #111216;
+}
+
+
+[data-theme="light"] .card-number {
+  color:
+    rgba(30, 30, 35, 0.52);
+}
+
+
+/* ========================================
+   LIGHT MODE HOVER
+======================================== */
+
+[data-theme="light"] .category-card:hover {
+  transform:
+    translateY(-12px)
+    scale(1.025);
+
+  border-color:
+    rgba(20, 20, 30, 0.18);
+
+  box-shadow:
+    0 28px 65px rgba(30, 35, 50, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+
+[data-theme="light"] .category-card:hover::before {
+  opacity: 0.82;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+  .landing {
+    min-height: 100svh;
+  }
+
+
+  .landing-content {
+    width: 90%;
+  }
+
+
+  .landing h1 {
+    margin-bottom: 45px;
+
+    font-size:
+      clamp(34px, 9vw, 60px);
+  }
+
+
+  .category-list {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+  }
+
+
+  .category-card {
+    width: min(220px, 80vw);
+
+    height: 180px;
+  }
+
+}
+
+/* ========================================
+   GLOBAL THEME BACKGROUND
+======================================== */
+
+.landing {
+  background-color: var(--background);
+  color: var(--text);
+
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease;
+}
+
+
+/* LIGHT MODE */
+[data-theme="light"] .landing {
+  background-color: #fffffa;
+  color: #000000;
+}
+
+
+/* DARK MODE */
+[data-theme="dark"] .landing {
+  background-color: #000000;
+  color: #ffffff;
+}

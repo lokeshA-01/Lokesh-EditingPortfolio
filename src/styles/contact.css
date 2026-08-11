@@ -1,0 +1,595 @@
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-page {
+  --contact-bg: #050505;
+  --contact-text: #f5f5f5;
+  --contact-muted: rgba(255, 255, 255, 0.48);
+  --contact-soft: rgba(255, 255, 255, 0.32);
+  --contact-border: rgba(255, 255, 255, 0.12);
+  --contact-border-strong: rgba(255, 255, 255, 0.22);
+  --contact-glow: rgba(255, 255, 255, 0.05);
+
+  position: relative;
+
+  background: var(--contact-bg);
+  color: var(--contact-text);
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+[data-theme="light"] .contact-page {
+  --contact-bg: #fffffa;
+  --contact-text: #111216;
+  --contact-muted: rgba(20, 20, 25, 0.52);
+  --contact-soft: rgba(20, 20, 25, 0.38);
+  --contact-border: rgba(20, 20, 30, 0.12);
+  --contact-border-strong: rgba(20, 20, 30, 0.24);
+  --contact-glow: rgba(40, 40, 50, 0.05);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.contact-hero {
+  position: relative;
+
+  min-height: 78vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+
+.contact-glow {
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: var(--contact-glow);
+
+  filter: blur(130px);
+
+  pointer-events: none;
+}
+
+
+.contact-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1000px, 90%);
+}
+
+
+.contact-eyebrow {
+  margin: 0 0 25px;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  color: var(--contact-soft);
+}
+
+
+.contact-content h1 {
+  margin: 0;
+
+  font-size: clamp(65px, 11vw, 150px);
+
+  line-height: 0.86;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+
+.contact-content h1 em {
+  font-style: normal;
+
+  color: var(--contact-soft);
+}
+
+
+.contact-description {
+  margin: 38px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: var(--contact-muted);
+}
+
+
+.contact-number {
+  position: absolute;
+
+  right: 32px;
+  bottom: 28px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: var(--contact-soft);
+}
+
+
+/* =========================================
+   CONTACT OPTIONS
+========================================= */
+
+.contact-options {
+  width: min(1200px, 88%);
+
+  margin: auto;
+
+  padding: 120px 0 180px;
+}
+
+
+.contact-section-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 70px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  color: var(--contact-soft);
+}
+
+
+.contact-section-label span {
+  width: 28px;
+
+  height: 1px;
+
+  background: var(--contact-border-strong);
+}
+
+
+/* =========================================
+   CONTACT LIST
+========================================= */
+
+.contact-list {
+  border-top: 1px solid var(--contact-border);
+}
+
+
+.contact-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 45px 0;
+
+  border-bottom: 1px solid var(--contact-border);
+
+  color: var(--contact-text);
+
+  text-decoration: none;
+
+  transition:
+    padding 0.45s ease,
+    border-color 0.45s ease;
+}
+
+
+.contact-item:hover {
+  padding-left: 18px;
+
+  padding-right: 18px;
+
+  border-color: var(--contact-border-strong);
+}
+
+
+.contact-item-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-width: 0;
+}
+
+
+.contact-item-number {
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--contact-soft);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   BRAND ICONS
+========================================= */
+
+.contact-item-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  color: var(--contact-soft);
+
+  transition:
+    color 0.4s ease,
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+.contact-item-icon svg {
+  width: 22px;
+  height: 22px;
+
+  display: block;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+
+/* =========================================
+   INSTAGRAM
+========================================= */
+
+.instagram-icon svg {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.instagram-icon .instagram-dot {
+  fill: currentColor;
+
+  stroke: none;
+}
+
+
+/* =========================================
+   GMAIL
+========================================= */
+
+.gmail-icon svg {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.gmail-icon .gmail-outline {
+  opacity: 0.45;
+}
+
+
+.gmail-icon .gmail-line {
+  stroke-width: 1.8;
+}
+
+
+/* =========================================
+   ICON HOVER
+========================================= */
+
+.contact-item:hover .contact-item-icon {
+  color: var(--contact-text);
+
+  transform: translateY(-1px);
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(255, 255, 255, 0.22)
+    );
+}
+
+
+.contact-item:hover .contact-item-icon svg {
+  transform: scale(1.06);
+}
+
+
+/* =========================================
+   CONTACT TEXT
+========================================= */
+
+.contact-item-label {
+  margin: 0 0 13px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  color: var(--contact-soft);
+}
+
+
+.contact-item h2 {
+  margin: 0;
+
+  font-size: clamp(25px, 4vw, 52px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================
+   CONTACT ARROW
+========================================= */
+
+.contact-item-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid var(--contact-border-strong);
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  color: var(--contact-muted);
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+
+.contact-item:hover .contact-item-arrow {
+  transform: translate(3px, -3px);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: var(--contact-text);
+}
+
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.contact-closing {
+  min-height: 75vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      var(--contact-glow),
+      transparent 45%
+    );
+}
+
+
+.contact-closing h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 135px);
+
+  line-height: 0.88;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+
+.contact-closing h2 em {
+  font-style: normal;
+
+  color: var(--contact-soft);
+}
+
+
+.contact-closing-text {
+  margin: 32px 0 0;
+
+  font-size: 13px;
+
+  color: var(--contact-muted);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .contact-hero {
+    min-height: 72vh;
+  }
+
+
+  .contact-content h1 {
+    font-size: clamp(58px, 16vw, 100px);
+  }
+
+
+  .contact-description {
+    font-size: 13px;
+
+    margin-top: 30px;
+  }
+
+
+  .contact-number {
+    right: 18px;
+    bottom: 20px;
+  }
+
+
+  /* OPTIONS */
+
+  .contact-options {
+    padding: 90px 0 120px;
+  }
+
+
+  .contact-section-label {
+    margin-bottom: 50px;
+  }
+
+
+  .contact-item {
+    padding: 32px 0;
+
+    gap: 20px;
+  }
+
+
+  .contact-item:hover {
+    padding-left: 8px;
+
+    padding-right: 8px;
+  }
+
+
+  .contact-item-left {
+    gap: 14px;
+
+    min-width: 0;
+  }
+
+
+  .contact-item-number {
+    align-self: flex-start;
+
+    padding-top: 4px;
+  }
+
+
+  /* MOBILE ICONS */
+
+  .contact-item-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+
+  .contact-item-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .contact-item h2 {
+    font-size: clamp(20px, 5.5vw, 32px);
+
+    overflow-wrap: anywhere;
+  }
+
+
+  .contact-item-label {
+    font-size: 8px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .contact-item-arrow {
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 15px;
+  }
+
+
+  /* CLOSING */
+
+  .contact-closing {
+    min-height: 65vh;
+  }
+
+
+  .contact-closing h2 {
+    font-size: clamp(52px, 14vw, 90px);
+  }
+
+}

@@ -1,0 +1,971 @@
+/* =========================================
+   TEASERS PAGE
+========================================= */
+
+.teasers-page {
+  position: relative;
+
+  background: var(--background);
+  color: var(--text);
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.teasers-hero {
+  position: relative;
+
+  min-height: 100vh;
+  height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.teasers-hero-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.72;
+
+  transform: scale(1.02);
+}
+
+.teasers-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.18) 45%,
+      rgba(0, 0, 0, 0.94) 100%
+    );
+
+  z-index: 1;
+}
+
+.teasers-hero-glow {
+  position: absolute;
+
+  width: 55vw;
+  height: 55vw;
+
+  max-width: 800px;
+  max-height: 800px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.teasers-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1100px, 90%);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.teasers-eyebrow {
+  margin: 0 0 24px;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.teasers-hero h1 {
+  margin: 0;
+
+  font-size: clamp(75px, 14vw, 200px);
+
+  line-height: 0.82;
+
+  font-weight: 400;
+
+  letter-spacing: -0.07em;
+
+  color: #fff;
+}
+
+.teasers-hero-description {
+  width: min(470px, 90%);
+
+  margin: 38px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.64);
+}
+
+
+/* =========================================
+   SCROLL BUTTON
+========================================= */
+
+.teasers-scroll-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 42px;
+
+  padding: 13px 19px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 100px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.teasers-scroll-button:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.35);
+
+  transform:
+    translateY(-3px);
+}
+
+.teasers-arrow {
+  font-size: 15px;
+
+  transition:
+    transform 0.35s ease;
+}
+
+.teasers-scroll-button:hover .teasers-arrow {
+  transform:
+    translateY(3px);
+}
+
+
+/* =========================================
+   HERO NUMBER
+========================================= */
+
+.teasers-hero-number {
+  position: absolute;
+
+  right: 34px;
+  bottom: 30px;
+
+  z-index: 2;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.teasers-intro {
+  position: relative;
+
+  width: min(1200px, 88%);
+
+  margin: 0 auto;
+
+  padding: 180px 0;
+}
+
+.teasers-intro-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 80px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  color: var(--text-muted);
+}
+
+.teasers-intro-label span {
+  width: 28px;
+  height: 1px;
+
+  background:
+    var(--text-muted);
+}
+
+.teasers-intro-content {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr 0.7fr;
+
+  gap: 80px;
+
+  align-items: end;
+}
+
+.teasers-intro h2 {
+  margin: 0;
+
+  font-size:
+    clamp(45px, 7vw, 100px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.teasers-intro h2 em {
+  font-style: normal;
+
+  color: var(--text-muted);
+}
+
+.teasers-intro-content > p {
+  max-width: 340px;
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   WORK
+========================================= */
+
+.teasers-work {
+  width: min(1400px, 92%);
+
+  margin: 0 auto;
+
+  padding:
+    80px 0 180px;
+}
+
+.teasers-section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 80px;
+}
+
+.teasers-section-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(45px, 6vw, 85px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.teasers-section-heading h2 em {
+  font-style: normal;
+
+  color: var(--text-muted);
+}
+
+.teasers-work-count {
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   PROJECT
+========================================= */
+
+.teaser-project {
+  width: 100%;
+
+  margin-bottom: 150px;
+}
+
+.teaser-project-visual {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.teaser-project-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 1.2s
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.teaser-project:hover
+.teaser-project-video {
+  transform:
+    scale(1.035);
+}
+
+
+/* =========================================
+   PROJECT SHADE
+========================================= */
+
+.teaser-project-shade {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2),
+      transparent 45%,
+      rgba(0, 0, 0, 0.58)
+    );
+}
+
+
+/* =========================================
+   PROJECT TOP
+========================================= */
+
+.teaser-project-top {
+  position: absolute;
+
+  top: 28px;
+  left: 30px;
+  right: 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  z-index: 3;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.teaser-project-center {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.teaser-view-circle {
+  width: 92px;
+  height: 92px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.4);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.14);
+
+  color: #fff;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transform:
+    scale(0.85);
+
+  pointer-events: auto;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    background 0.35s ease;
+}
+
+.teaser-project:hover
+.teaser-view-circle {
+  opacity: 1;
+
+  transform:
+    scale(1);
+}
+
+.teaser-view-circle:hover {
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================
+   PROJECT BOTTOM
+========================================= */
+
+.teaser-project-bottom {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  bottom: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  z-index: 3;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+}
+
+
+/* =========================================
+   PROJECT DETAILS
+========================================= */
+
+.teaser-project-details {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 80px;
+
+  padding-top: 30px;
+}
+
+.teaser-project-title {
+  flex: 1;
+}
+
+.teaser-project-title p {
+  margin: 0 0 16px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-muted);
+}
+
+.teaser-project-title h3 {
+  margin: 0;
+
+  font-size:
+    clamp(32px, 4vw, 58px);
+
+  line-height: 0.94;
+
+  font-weight: 400;
+
+  letter-spacing: -0.045em;
+}
+
+.teaser-project-description {
+  width: min(340px, 30%);
+
+  padding-top: 4px;
+}
+
+.teaser-project-description > p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.teaser-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 25px;
+}
+
+.teaser-tags span {
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.teasers-process {
+  width: min(1200px, 88%);
+
+  margin: 0 auto;
+
+  padding: 100px 0 180px;
+}
+
+.teasers-process-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(55px, 8vw, 110px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  letter-spacing: -0.06em;
+}
+
+.teasers-process-heading h2 em {
+  font-style: normal;
+
+  color: var(--text-muted);
+}
+
+.teasers-process-list {
+  margin-top: 100px;
+}
+
+.teasers-process-item {
+  display: grid;
+
+  grid-template-columns:
+    80px 1fr;
+
+  gap: 30px;
+
+  padding: 35px 0;
+
+  border-top:
+    1px solid
+    var(--card-border);
+}
+
+.teasers-process-item:last-child {
+  border-bottom:
+    1px solid
+    var(--card-border);
+}
+
+.teasers-process-item > span {
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+}
+
+.teasers-process-item h3 {
+  margin: 0 0 10px;
+
+  font-size: 28px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+}
+
+.teasers-process-item p {
+  max-width: 430px;
+
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.teasers-closing {
+  min-height: 80vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.05),
+      transparent 45%
+    );
+}
+
+.teasers-closing h2 {
+  margin: 0;
+
+  font-size:
+    clamp(55px, 9vw, 130px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  letter-spacing: -0.06em;
+}
+
+.teasers-closing h2 em {
+  font-style: normal;
+
+  color: var(--text-muted);
+}
+
+.teasers-closing-text {
+  margin: 30px 0 0;
+
+  font-size: 13px;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+[data-theme="light"] .teasers-page {
+  background: #fffffa;
+
+  color: #111216;
+}
+
+[data-theme="light"] .teasers-intro h2,
+[data-theme="light"] .teasers-section-heading h2,
+[data-theme="light"] .teasers-process-heading h2,
+[data-theme="light"] .teasers-closing h2,
+[data-theme="light"] .teaser-project-title h3,
+[data-theme="light"] .teasers-process-item h3 {
+  color: #111216;
+}
+
+[data-theme="light"] .teasers-intro-content > p,
+[data-theme="light"] .teasers-intro-label,
+[data-theme="light"] .teasers-work-count,
+[data-theme="light"] .teaser-project-title p,
+[data-theme="light"] .teaser-project-description > p,
+[data-theme="light"] .teaser-tags span,
+[data-theme="light"] .teasers-process-item > span,
+[data-theme="light"] .teasers-process-item p,
+[data-theme="light"] .teasers-closing-text {
+  color:
+    rgba(25, 25, 30, 0.5);
+}
+
+[data-theme="light"] .teasers-intro h2 em,
+[data-theme="light"] .teasers-section-heading h2 em,
+[data-theme="light"] .teasers-process-heading h2 em,
+[data-theme="light"] .teasers-closing h2 em {
+  color:
+    rgba(25, 25, 30, 0.4);
+}
+
+[data-theme="light"] .teasers-process-item {
+  border-color:
+    rgba(20, 20, 30, 0.1);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .teasers-hero {
+    min-height: 100svh;
+  }
+
+  .teasers-hero-video {
+    opacity: 0.58;
+  }
+
+  .teasers-hero h1 {
+    font-size:
+      clamp(68px, 18vw, 125px);
+  }
+
+  .teasers-hero-description {
+    font-size: 13px;
+
+    margin-top: 30px;
+  }
+
+  .teasers-hero-number {
+    right: 20px;
+    bottom: 20px;
+  }
+
+
+  .teasers-intro {
+    padding: 120px 0;
+  }
+
+  .teasers-intro-label {
+    margin-bottom: 50px;
+  }
+
+  .teasers-intro-content {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .teasers-intro h2 {
+    font-size:
+      clamp(48px, 13vw, 75px);
+  }
+
+
+  .teasers-work {
+    padding:
+      60px 0 120px;
+  }
+
+  .teasers-section-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+  }
+
+  .teasers-section-heading h2 {
+    font-size:
+      clamp(48px, 13vw, 75px);
+  }
+
+
+  .teaser-project {
+    margin-bottom: 100px;
+  }
+
+  .teaser-project-visual {
+    aspect-ratio: 16 / 9;
+  }
+
+  .teaser-view-circle {
+    width: 76px;
+    height: 76px;
+
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  .teaser-project-top {
+    top: 18px;
+
+    left: 18px;
+    right: 18px;
+  }
+
+  .teaser-project-bottom {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+
+  .teaser-project-details {
+    flex-direction: column;
+
+    gap: 30px;
+
+    padding-top: 25px;
+  }
+
+  .teaser-project-title h3 {
+    font-size:
+      clamp(34px, 10vw, 58px);
+  }
+
+  .teaser-project-description {
+    width: 100%;
+  }
+
+
+  .teasers-process {
+    padding:
+      80px 0 120px;
+  }
+
+  .teasers-process-list {
+    margin-top: 65px;
+  }
+
+  .teasers-process-item {
+    grid-template-columns:
+      45px 1fr;
+
+    gap: 15px;
+
+    padding: 28px 0;
+  }
+
+  .teasers-process-item h3 {
+    font-size: 24px;
+  }
+
+
+  .teasers-closing {
+    min-height: 65vh;
+  }
+
+  .teasers-closing h2 {
+    font-size:
+      clamp(52px, 14vw, 90px);
+  }
+
+}

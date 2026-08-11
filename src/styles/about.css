@@ -1,0 +1,726 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  --about-bg: #050505;
+  --about-text: #f5f5f5;
+  --about-muted: rgba(255, 255, 255, 0.48);
+  --about-soft: rgba(255, 255, 255, 0.32);
+  --about-border: rgba(255, 255, 255, 0.12);
+  --about-border-strong: rgba(255, 255, 255, 0.22);
+  --about-glow: rgba(255, 255, 255, 0.05);
+
+  position: relative;
+
+  background: var(--about-bg);
+  color: var(--about-text);
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+[data-theme="light"] .about-page {
+  --about-bg: #fffffa;
+  --about-text: #111216;
+  --about-muted: rgba(20, 20, 25, 0.52);
+  --about-soft: rgba(20, 20, 25, 0.38);
+  --about-border: rgba(20, 20, 30, 0.12);
+  --about-border-strong: rgba(20, 20, 30, 0.24);
+  --about-glow: rgba(40, 40, 50, 0.05);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.about-hero {
+  position: relative;
+
+  min-height: 78vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+
+.about-glow {
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  background: var(--about-glow);
+
+  filter: blur(140px);
+
+  pointer-events: none;
+}
+
+
+.about-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1000px, 90%);
+}
+
+
+.about-eyebrow {
+  margin: 0 0 25px;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  color: var(--about-soft);
+}
+
+
+.about-hero-content h1 {
+  margin: 0;
+
+  font-size: clamp(65px, 11vw, 150px);
+
+  line-height: 0.86;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+
+.about-hero-content h1 em {
+  font-style: normal;
+
+  color: var(--about-soft);
+}
+
+
+.about-hero-description {
+  margin: 38px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: var(--about-muted);
+}
+
+
+.about-number {
+  position: absolute;
+
+  right: 32px;
+  bottom: 28px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: var(--about-soft);
+}
+
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.about-section-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 70px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  color: var(--about-soft);
+}
+
+
+.about-section-label span {
+  width: 28px;
+
+  height: 1px;
+
+  background: var(--about-border-strong);
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.about-introduction {
+  width: min(1200px, 88%);
+
+  margin: auto;
+
+  padding: 140px 0 180px;
+}
+
+
+.about-introduction-grid {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 100px;
+}
+
+
+.about-introduction-title p {
+  margin: 0;
+
+  font-size: clamp(45px, 6vw, 85px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  letter-spacing: -0.06em;
+}
+
+
+.about-introduction-title em {
+  font-style: normal;
+
+  color: var(--about-soft);
+}
+
+
+.about-introduction-text {
+  max-width: 620px;
+
+  padding-top: 8px;
+}
+
+
+.about-introduction-text p {
+  margin: 0 0 28px;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+
+  color: var(--about-muted);
+}
+
+
+.about-introduction-text p:first-child {
+  font-size: 20px;
+
+  line-height: 1.65;
+
+  color: var(--about-text);
+}
+
+
+/* =========================================
+   LEARNING
+========================================= */
+
+.about-learning {
+  position: relative;
+
+  min-height: 80vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 120px 6%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      var(--about-glow),
+      transparent 50%
+    );
+}
+
+
+.about-learning-content {
+  width: min(1100px, 100%);
+
+  margin: auto;
+}
+
+
+.about-learning-content h2 {
+  margin: 0;
+
+  font-size: clamp(65px, 10vw, 145px);
+
+  line-height: 0.84;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+
+.about-learning-content h2 em {
+  font-style: normal;
+
+  color: var(--about-soft);
+}
+
+
+.about-learning-description {
+  width: min(500px, 100%);
+
+  margin: 55px 0 0;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  color: var(--about-muted);
+}
+
+
+/* =========================================
+   WHAT I CREATE
+========================================= */
+
+.about-work {
+  width: min(1200px, 88%);
+
+  margin: auto;
+
+  padding: 150px 0 180px;
+}
+
+
+.about-work-list {
+  border-top: 1px solid var(--about-border);
+}
+
+
+/* =========================================
+   CLICKABLE WORK ITEM
+========================================= */
+
+.about-work-item {
+  display: grid;
+
+  grid-template-columns: 80px 1fr auto;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 42px 0;
+
+  border-bottom: 1px solid var(--about-border);
+
+  color: var(--about-text);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    padding 0.45s ease,
+    border-color 0.45s ease;
+}
+
+
+.about-work-item:hover {
+  padding-left: 18px;
+
+  padding-right: 18px;
+
+  border-color: var(--about-border-strong);
+}
+
+
+.about-work-number {
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: var(--about-soft);
+}
+
+
+.about-work-item h3 {
+  margin: 0;
+
+  font-size: clamp(30px, 4vw, 55px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  letter-spacing: -0.045em;
+
+  color: var(--about-text);
+}
+
+
+/* =========================================
+   WORK ARROW
+========================================= */
+
+.about-work-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid var(--about-border-strong);
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  color: var(--about-muted);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+
+.about-work-item:hover .about-work-arrow {
+  transform: translate(3px, -3px);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: var(--about-text);
+}
+
+
+/* =========================================
+   BECOMING
+========================================= */
+
+.about-becoming {
+  position: relative;
+
+  min-height: 85vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 120px 20px;
+
+  overflow: hidden;
+}
+
+
+.about-becoming-glow {
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: var(--about-glow);
+
+  filter: blur(140px);
+}
+
+
+.about-becoming-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(900px, 100%);
+}
+
+
+.about-becoming-content h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 135px);
+
+  line-height: 0.86;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+
+.about-becoming-content h2 em {
+  font-style: normal;
+
+  color: var(--about-soft);
+}
+
+
+.about-becoming-text {
+  width: min(600px, 100%);
+
+  margin: 38px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  color: var(--about-muted);
+}
+
+
+.about-becoming-text + .about-becoming-text {
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.about-closing {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+}
+
+
+.about-closing h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 135px);
+
+  line-height: 0.87;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+
+.about-closing h2 em {
+  font-style: normal;
+
+  color: var(--about-soft);
+}
+
+
+.about-closing-text {
+  margin: 32px 0 0;
+
+  font-size: 13px;
+
+  color: var(--about-muted);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .about-hero {
+    min-height: 72vh;
+  }
+
+
+  .about-hero-content h1 {
+    font-size: clamp(58px, 16vw, 100px);
+  }
+
+
+  .about-hero-description {
+    font-size: 13px;
+
+    margin-top: 30px;
+  }
+
+
+  .about-number {
+    right: 18px;
+    bottom: 20px;
+  }
+
+
+  /* =======================================
+     INTRODUCTION
+  ======================================= */
+
+  .about-introduction {
+    padding: 90px 0 120px;
+  }
+
+
+  .about-section-label {
+    margin-bottom: 50px;
+  }
+
+
+  .about-introduction-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+
+  .about-introduction-title p {
+    font-size: clamp(48px, 13vw, 80px);
+  }
+
+
+  .about-introduction-text {
+    padding-top: 0;
+  }
+
+
+  .about-introduction-text p {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+
+  .about-introduction-text p:first-child {
+    font-size: 17px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================
+     LEARNING
+  ======================================= */
+
+  .about-learning {
+    min-height: 70vh;
+
+    padding: 100px 6%;
+  }
+
+
+  .about-learning-content h2 {
+    font-size: clamp(58px, 15vw, 100px);
+  }
+
+
+  .about-learning-description {
+    margin-top: 40px;
+
+    font-size: 13px;
+  }
+
+
+  /* =======================================
+     WORK
+  ======================================= */
+
+  .about-work {
+    padding: 100px 0 120px;
+  }
+
+
+  .about-work-item {
+    grid-template-columns: 35px 1fr auto;
+
+    gap: 14px;
+
+    padding: 32px 0;
+  }
+
+
+  .about-work-item:hover {
+    padding-left: 8px;
+
+    padding-right: 8px;
+  }
+
+
+  .about-work-item h3 {
+    font-size: clamp(22px, 6vw, 35px);
+  }
+
+
+  .about-work-arrow {
+    width: 40px;
+    height: 40px;
+
+    font-size: 15px;
+  }
+
+
+  /* =======================================
+     BECOMING
+  ======================================= */
+
+  .about-becoming {
+    min-height: 75vh;
+  }
+
+
+  .about-becoming-content h2 {
+    font-size: clamp(52px, 14vw, 90px);
+  }
+
+
+  .about-becoming-text {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  /* =======================================
+     CLOSING
+  ======================================= */
+
+  .about-closing {
+    min-height: 65vh;
+  }
+
+
+  .about-closing h2 {
+    font-size: clamp(52px, 14vw, 90px);
+  }
+
+}
