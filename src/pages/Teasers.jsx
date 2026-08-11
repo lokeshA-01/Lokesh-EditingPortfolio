@@ -239,7 +239,7 @@ function Teasers() {
           year="2026"
           description="A commercial opening teaser focused on energy, presentation and visual impact."
           tags={["EDITING", "COLOR", "MOTION"]}
-          video="/videos/ShopOpeningTeaser-web.mp4"
+          video="/videos/Wone8realestateTeaser-web.mp4"
           poster="/images/wone8Thumb.jpg"
           type="local"
         />
